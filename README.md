@@ -11,5 +11,5 @@ Hardware: Google Colab L4
 ## Training Notes
 - For this experiment, Ray's rllib requires at least 3 CPUs available and 1 GPU to run the notebook
 
-## Finding Theta Blog Posts: 
+## Finding Theta Blog Posts
 - [Using Multi-Agent Reinforcement Learning to play OpenSpiel's Connect 4 with Ray's RLlib](https://www.findingtheta.com/blog/using-multi-agent-reinforcement-learning-to-play-openspiels-connect-4-with-rays-rllib)
