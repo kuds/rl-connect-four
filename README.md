@@ -40,13 +40,14 @@ previous run.
 - `opening_moves.png` — bar chart of main's first move (as player 0)
   over 200 deterministic rollouts; column 3 (center) is the
   theoretical-best opening and is highlighted for reference.
-- `videos/*.gif` — animated replays of the trained agent playing Connect
-  Four, rendered via the Farama PettingZoo `connect_four_v3` environment.
-  The trained policy still consumes OpenSpiel observations (that's what
-  it was trained on); PettingZoo is driven in lockstep purely as the
-  renderer. Includes `main_vs_random_p0.gif`, `main_vs_random_p1.gif`,
-  and — if league snapshots exist — `main_vs_main_v0.gif` plus
-  `main_vs_main_v{N-1}.gif` (the latest snapshot).
+- `videos/*.mp4` — H.264 video replays of the trained agent playing
+  Connect Four, rendered via the Farama PettingZoo `connect_four_v3`
+  environment. The trained policy still consumes OpenSpiel observations
+  (that's what it was trained on); PettingZoo is driven in lockstep
+  purely as the renderer. Includes `main_vs_random_p0.mp4`,
+  `main_vs_random_p1.mp4`, and — if league snapshots exist —
+  `main_vs_main_v0.mp4` plus `main_vs_main_v{N-1}.mp4` (the latest
+  snapshot).
 - `results.json` — machine-readable summary: training metadata,
   win/loss/draw rates vs. the random baseline (with 95% CIs), win rates
   vs. every league snapshot, and paths to every graph / video / checkpoint.
@@ -54,7 +55,7 @@ previous run.
 ## Training Notes
 - For this experiment, Ray's rllib requires at least 3 CPUs available and 1 GPU to run the notebook
 - The notebook runs headless by default. Set `args.num_episodes_human_play > 0` in the Args cell to play against the trained agent on the command line after training.
-- Video recording requires `pettingzoo[classic]` (added to the pip install cell). If PettingZoo isn't available the video cell prints a message and skips gracefully — everything else still runs.
+- Video recording requires `pettingzoo[classic]` and `imageio[ffmpeg]` (both added to the pip install cell). If PettingZoo isn't available the video cell prints a message and skips gracefully — everything else still runs.
 
 ## Finding Theta Blog Posts
 - [Using Multi-Agent Reinforcement Learning to play OpenSpiel's Connect 4 with Ray's RLlib](https://www.findingtheta.com/blog/using-multi-agent-reinforcement-learning-to-play-openspiels-connect-4-with-rays-rllib)
