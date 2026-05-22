@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 720" font-family="Helvetica, Arial, sans-serif" font-size="13">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 720" font-family="Helvetica, Arial, sans-serif" font-size="13">
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
       <path d="M0,0 L10,5 L0,10 z" fill="#264653"/>
@@ -13,147 +13,142 @@
   </defs>
 
   <!-- Title -->
-  <text x="520" y="34" text-anchor="middle" font-size="20" font-weight="700" fill="#1d3557">
+  <text x="540" y="34" text-anchor="middle" font-size="20" font-weight="700" fill="#1d3557">
     Connect Four Self-Play Training Setup
   </text>
-  <text x="520" y="55" text-anchor="middle" font-size="13" fill="#555">
+  <text x="540" y="55" text-anchor="middle" font-size="13" fill="#555">
     PPO + RLlib league-based self-play on OpenSpiel
   </text>
 
   <!-- ============================================================
-       TOP ROW: Env Runner | Policy Map | SelfPlayCallback
+       TOP ROW: Env Runners | Policy Map | SelfPlayCallback
        ============================================================ -->
 
-  <!-- Env Runner -->
-  <rect x="30" y="90" width="260" height="220" rx="10" fill="#e9f5f3" stroke="#2a9d8f" stroke-width="2"/>
-  <text x="160" y="115" text-anchor="middle" font-weight="700" fill="#1d3557">OpenSpiel Env Runners</text>
-  <text x="160" y="138" text-anchor="middle" fill="#264653">connect_four game</text>
-  <text x="160" y="158" text-anchor="middle" fill="#264653">2 agents · Discrete(7) actions</text>
-  <text x="160" y="178" text-anchor="middle" fill="#264653">info_state obs + legal mask</text>
-  <text x="160" y="210" text-anchor="middle" font-style="italic" fill="#555">num_env_runners = 2</text>
-  <text x="160" y="230" text-anchor="middle" font-style="italic" fill="#555">policy_mapping_fn assigns</text>
-  <text x="160" y="248" text-anchor="middle" font-style="italic" fill="#555">p0/p1 randomly per episode</text>
-  <text x="160" y="280" text-anchor="middle" font-size="11" fill="#777">main always paired against</text>
-  <text x="160" y="295" text-anchor="middle" font-size="11" fill="#777">one league opponent</text>
+  <!-- Env Runners -->
+  <rect x="30" y="90" width="240" height="240" rx="10" fill="#e9f5f3" stroke="#2a9d8f" stroke-width="2"/>
+  <text x="150" y="115" text-anchor="middle" font-weight="700" fill="#1d3557">OpenSpiel Env Runners</text>
+  <text x="150" y="145" text-anchor="middle" fill="#264653">connect_four game</text>
+  <text x="150" y="167" text-anchor="middle" fill="#264653">2 agents · Discrete(7)</text>
+  <text x="150" y="189" text-anchor="middle" fill="#264653">info_state obs + legal mask</text>
+  <text x="150" y="226" text-anchor="middle" font-style="italic" font-size="12" fill="#555">num_env_runners = 2</text>
+  <text x="150" y="248" text-anchor="middle" font-style="italic" font-size="12" fill="#555">policy_mapping_fn assigns</text>
+  <text x="150" y="266" text-anchor="middle" font-style="italic" font-size="12" fill="#555">p0/p1 randomly per episode</text>
+  <text x="150" y="298" text-anchor="middle" font-size="11" fill="#777">main always paired against</text>
+  <text x="150" y="314" text-anchor="middle" font-size="11" fill="#777">one league opponent</text>
 
   <!-- Policy / Module Map -->
-  <rect x="370" y="90" width="300" height="220" rx="10" fill="#fef6ec" stroke="#e76f51" stroke-width="2"/>
-  <text x="520" y="115" text-anchor="middle" font-weight="700" fill="#1d3557">Policy / Module Map</text>
+  <rect x="360" y="90" width="300" height="240" rx="10" fill="#fef6ec" stroke="#e76f51" stroke-width="2"/>
+  <text x="510" y="115" text-anchor="middle" font-weight="700" fill="#1d3557">Policy / Module Map</text>
 
-  <!-- main box -->
-  <rect x="390" y="130" width="260" height="38" rx="6" fill="#ffffff" stroke="#2a9d8f" stroke-width="2"/>
-  <text x="520" y="154" text-anchor="middle" fill="#1d3557">
+  <!-- main row -->
+  <rect x="380" y="135" width="260" height="38" rx="6" fill="#ffffff" stroke="#2a9d8f" stroke-width="2"/>
+  <text x="510" y="159" text-anchor="middle" fill="#1d3557">
     <tspan font-weight="700">main</tspan> · PPO · trainable
   </text>
 
-  <!-- random box -->
-  <rect x="390" y="180" width="260" height="38" rx="6" fill="#ffffff" stroke="#999"/>
-  <text x="520" y="204" text-anchor="middle" fill="#555">
+  <!-- random row -->
+  <rect x="380" y="193" width="260" height="38" rx="6" fill="#ffffff" stroke="#999"/>
+  <text x="510" y="217" text-anchor="middle" fill="#555">
     <tspan font-weight="700">random</tspan> · RandomRLModule · frozen
   </text>
 
-  <!-- snapshot box -->
-  <rect x="390" y="230" width="260" height="38" rx="6" fill="#ffffff" stroke="#6a4c93" stroke-dasharray="5 3"/>
-  <text x="520" y="254" text-anchor="middle" fill="#6a4c93">
+  <!-- snapshot row -->
+  <rect x="380" y="251" width="260" height="38" rx="6" fill="#ffffff" stroke="#6a4c93" stroke-dasharray="5 3"/>
+  <text x="510" y="275" text-anchor="middle" fill="#6a4c93">
     <tspan font-weight="700">main_v0, main_v1, ...</tspan> · frozen
   </text>
 
-  <text x="520" y="293" text-anchor="middle" font-size="11" font-style="italic" fill="#777">
+  <text x="510" y="314" text-anchor="middle" font-size="11" font-style="italic" fill="#777">
     policies_to_train = ["main"]
   </text>
 
   <!-- SelfPlayCallback -->
-  <rect x="750" y="90" width="260" height="220" rx="10" fill="#f3edff" stroke="#6a4c93" stroke-width="2"/>
-  <text x="880" y="115" text-anchor="middle" font-weight="700" fill="#1d3557">SelfPlayCallback</text>
-  <text x="880" y="140" text-anchor="middle" fill="#264653">runs after every iteration</text>
-  <text x="880" y="170" text-anchor="middle" fill="#264653">if main's rolling win rate</text>
-  <text x="880" y="188" text-anchor="middle" fill="#264653">&gt; 0.95 against current opp:</text>
-  <text x="880" y="212" text-anchor="middle" fill="#264653">• snapshot main → main_v{N}</text>
-  <text x="880" y="230" text-anchor="middle" fill="#264653">• freeze it · add to league</text>
-  <text x="880" y="248" text-anchor="middle" fill="#264653">• route some episodes to it</text>
-  <text x="880" y="280" text-anchor="middle" font-size="11" font-style="italic" fill="#777">stop when league_size ≥ 3,</text>
-  <text x="880" y="295" text-anchor="middle" font-size="11" font-style="italic" fill="#777">iters ≥ 100, or steps ≥ 2M</text>
+  <rect x="750" y="90" width="270" height="240" rx="10" fill="#f3edff" stroke="#6a4c93" stroke-width="2"/>
+  <text x="885" y="115" text-anchor="middle" font-weight="700" fill="#1d3557">SelfPlayCallback</text>
+  <text x="885" y="145" text-anchor="middle" fill="#264653">runs after every iteration</text>
+  <text x="885" y="178" text-anchor="middle" fill="#264653">if main's rolling win rate</text>
+  <text x="885" y="196" text-anchor="middle" fill="#264653">&gt; 0.95 against current opp:</text>
+  <text x="885" y="222" text-anchor="middle" fill="#264653">• snapshot main → main_v{N}</text>
+  <text x="885" y="240" text-anchor="middle" fill="#264653">• freeze it · add to league</text>
+  <text x="885" y="258" text-anchor="middle" fill="#264653">• route episodes to it</text>
+  <text x="885" y="290" text-anchor="middle" font-size="11" font-style="italic" fill="#777">stop when league_size ≥ 3,</text>
+  <text x="885" y="306" text-anchor="middle" font-size="11" font-style="italic" fill="#777">iters ≥ 100, or steps ≥ 2M</text>
 
   <!-- ============================================================
-       ARROWS: top row
+       ARROWS: top row (between Env Runners and Policy Map,
+       and from SelfPlayCallback into Policy Map)
        ============================================================ -->
 
-  <!-- env → policy : "obs" (route into the gap between main and random) -->
-  <path d="M290,175 L390,175" stroke="#264653" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
-  <text x="340" y="168" text-anchor="middle" font-size="11" fill="#264653">obs + legal</text>
+  <!-- env → policy "obs + legal" : lands in the 20px gap between main and random rows -->
+  <path d="M270,183 L380,183" stroke="#264653" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <text x="325" y="175" text-anchor="middle" font-size="11" fill="#264653">obs + legal</text>
 
-  <!-- policy → env : "action" (route into the gap between random and snapshot) -->
-  <path d="M390,225 L290,225" stroke="#264653" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
-  <text x="340" y="218" text-anchor="middle" font-size="11" fill="#264653">action</text>
+  <!-- policy → env "action" : lands in the 20px gap between random and snapshot rows -->
+  <path d="M380,241 L270,241" stroke="#264653" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <text x="325" y="233" text-anchor="middle" font-size="11" fill="#264653">action</text>
 
-  <!-- callback → policy : "snapshot" arrow lands ON the snapshot row -->
-  <path d="M750,249 L650,249" stroke="#6a4c93" stroke-width="2" stroke-dasharray="5 3" fill="none" marker-end="url(#arrowPurple)"/>
-  <text x="700" y="242" text-anchor="middle" font-size="11" fill="#6a4c93">freeze + add</text>
-
-  <!-- callback reads main's win rate (dashed back-arrow above the snapshot one) -->
-  <path d="M750,149 L650,149" stroke="#6a4c93" stroke-width="1.5" stroke-dasharray="3 3" fill="none" marker-end="url(#arrowPurple)"/>
-  <text x="700" y="142" text-anchor="middle" font-size="11" fill="#6a4c93">read win_rate</text>
+  <!-- callback → policy snapshot row : arrow lands on the snapshot sub-box right edge -->
+  <path d="M750,270 L640,270" stroke="#6a4c93" stroke-width="2" stroke-dasharray="5 3" fill="none" marker-end="url(#arrowPurple)"/>
+  <text x="695" y="262" text-anchor="middle" font-size="11" fill="#6a4c93">freeze + add</text>
 
   <!-- ============================================================
        MIDDLE ROW: PPO Learner
        ============================================================ -->
 
-  <rect x="220" y="380" width="600" height="130" rx="10" fill="#fef0eb" stroke="#e76f51" stroke-width="2"/>
-  <text x="520" y="406" text-anchor="middle" font-weight="700" fill="#1d3557">PPO Learner (1 GPU)</text>
-  <text x="520" y="428" text-anchor="middle" fill="#264653">MLP [512, 512] · num_epochs = 20</text>
-  <text x="520" y="448" text-anchor="middle" fill="#264653">updates "main" only · uses rollouts from all opponents</text>
-  <text x="520" y="473" text-anchor="middle" font-style="italic" fill="#555">
+  <rect x="240" y="390" width="600" height="130" rx="10" fill="#fef0eb" stroke="#e76f51" stroke-width="2"/>
+  <text x="540" y="416" text-anchor="middle" font-weight="700" fill="#1d3557">PPO Learner (1 GPU)</text>
+  <text x="540" y="440" text-anchor="middle" fill="#264653">MLP [512, 512] · num_epochs = 20</text>
+  <text x="540" y="460" text-anchor="middle" fill="#264653">updates "main" only · uses rollouts from all opponents</text>
+  <text x="540" y="485" text-anchor="middle" font-style="italic" fill="#555">
     logs: policy_loss · vf_loss · entropy · kl
   </text>
-  <text x="520" y="491" text-anchor="middle" font-style="italic" fill="#555">
+  <text x="540" y="503" text-anchor="middle" font-style="italic" fill="#555">
     env_runner metrics: win_rate · episode_return_mean
   </text>
 
-  <!-- env runner → learner : "rollouts" (down + right, elbow path) -->
-  <path d="M160,310 L160,445 L220,445" stroke="#264653" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
-  <text x="172" y="375" font-size="11" fill="#264653">rollouts</text>
+  <!-- env runner → learner "rollouts" : elbow path down then right, well clear of both boxes -->
+  <path d="M150,330 L150,455 L240,455" stroke="#264653" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <text x="162" y="395" font-size="11" fill="#264653">rollouts</text>
 
-  <!-- learner → policy "main" : "updated weights" (route around the right side, then up + left)
-       Goes from learner top-right → up to clearance row 350 → left to x=670 → up to main box right edge at y=149 -->
-  <path d="M820,445 L860,445 L860,355 L670,355 L670,149 L650,149"
-        stroke="#e76f51" stroke-width="2" fill="none" marker-end="url(#arrowOrange)" stroke-linejoin="round"/>
-  <text x="870" y="400" font-size="11" fill="#e76f51" text-anchor="start">updated</text>
-  <text x="870" y="415" font-size="11" fill="#e76f51" text-anchor="start">weights</text>
+  <!-- learner → policy "main" : "updated weights"
+       Route with ~45px clearance off the learner's right edge, run across at y=360
+       (30px below policy map bottom, 30px above learner top), then up alongside the
+       policy map (~25px clearance) and into the main row.
+       Path: right → up → left → up → left (lands on right edge of policy map at main row) -->
+  <path d="M840,455 L885,455 L885,360 L685,360 L685,154 L660,154"
+        stroke="#e76f51" stroke-width="2" fill="none"
+        marker-end="url(#arrowOrange)" stroke-linejoin="round"/>
+  <text x="785" y="353" text-anchor="middle" font-size="11" fill="#e76f51">updated weights → main</text>
 
   <!-- ============================================================
        BOTTOM ROW: Artifacts
+       Strict 3-column grid. Two entries per column, each with a
+       bold title and a single italic description line.
        ============================================================ -->
 
-  <rect x="30" y="555" width="980" height="140" rx="10" fill="#eef2f7" stroke="#264653" stroke-width="2"/>
-  <text x="520" y="580" text-anchor="middle" font-weight="700" fill="#1d3557">
+  <rect x="30" y="555" width="1020" height="140" rx="10" fill="#eef2f7" stroke="#264653" stroke-width="2"/>
+  <text x="540" y="582" text-anchor="middle" font-weight="700" fill="#1d3557">
     Post-training artifacts → $ARTIFACT_DIR
   </text>
 
-  <g font-size="12" fill="#264653">
-    <!-- column 1 -->
-    <text x="60"  y="608" font-weight="700">checkpoint/</text>
-    <text x="60"  y="625" fill="#555" font-style="italic">final algo + every league snapshot</text>
+  <!-- Column 1: data -->
+  <text x="180" y="615" text-anchor="middle" font-weight="700" font-size="13" fill="#264653">checkpoint/</text>
+  <text x="180" y="633" text-anchor="middle" font-size="11" font-style="italic" fill="#555">final algo + every league snapshot</text>
 
-    <text x="60"  y="657" font-weight="700">results.json</text>
-    <text x="60"  y="674" fill="#555" font-style="italic">win/loss/draw vs random (95% CI)</text>
-    <text x="60"  y="688" fill="#555" font-style="italic">+ vs every league snapshot</text>
+  <text x="180" y="668" text-anchor="middle" font-weight="700" font-size="13" fill="#264653">results.json</text>
+  <text x="180" y="686" text-anchor="middle" font-size="11" font-style="italic" fill="#555">vs random (95% CI) and every snapshot</text>
 
-    <!-- column 2 -->
-    <text x="390" y="608" font-weight="700">learning_curves.png</text>
-    <text x="390" y="625" fill="#555" font-style="italic">2×3 panel: win rate, return,</text>
-    <text x="390" y="639" fill="#555" font-style="italic">league size, policy/value loss,</text>
-    <text x="390" y="653" fill="#555" font-style="italic">entropy — raw + rolling mean</text>
+  <!-- Column 2: graphs -->
+  <text x="540" y="615" text-anchor="middle" font-weight="700" font-size="13" fill="#264653">learning_curves.png · win_rate.png · reward.png</text>
+  <text x="540" y="633" text-anchor="middle" font-size="11" font-style="italic" fill="#555">main learning curves (raw + rolling-mean overlay)</text>
 
-    <text x="390" y="678" font-weight="700">win_rate.png · reward.png</text>
-    <text x="390" y="692" fill="#555" font-style="italic">dedicated single-metric plots</text>
+  <text x="540" y="668" text-anchor="middle" font-weight="700" font-size="13" fill="#264653">win_rate_by_phase.png · opening_moves.png</text>
+  <text x="540" y="686" text-anchor="middle" font-size="11" font-style="italic" fill="#555">league-phase shading + opening-move distribution</text>
 
-    <!-- column 3 -->
-    <text x="720" y="608" font-weight="700">videos/*.gif</text>
-    <text x="720" y="625" fill="#555" font-style="italic">main vs random (p0 + p1),</text>
-    <text x="720" y="639" fill="#555" font-style="italic">vs first &amp; latest league snapshot</text>
+  <!-- Column 3: video -->
+  <text x="885" y="615" text-anchor="middle" font-weight="700" font-size="13" fill="#264653">videos/*.gif</text>
+  <text x="885" y="633" text-anchor="middle" font-size="11" font-style="italic" fill="#555">main vs random + first &amp; latest snapshot</text>
 
-    <text x="720" y="664" font-weight="700">PettingZoo connect_four_v3</text>
-    <text x="720" y="678" fill="#555" font-style="italic">mirrors OpenSpiel actions purely</text>
-    <text x="720" y="692" fill="#555" font-style="italic">for rgb_array rendering</text>
-  </g>
+  <text x="885" y="668" text-anchor="middle" font-weight="700" font-size="13" fill="#264653">PettingZoo connect_four_v3</text>
+  <text x="885" y="686" text-anchor="middle" font-size="11" font-style="italic" fill="#555">mirrors OpenSpiel actions for rgb_array rendering</text>
 </svg>
