@@ -18,10 +18,14 @@ training and writes the results to `artifacts/results.json`.
 ## Post-training artifacts
 
 Running the notebook end-to-end writes everything below to
-`$ARTIFACT_DIR`, which points at Google Drive when running in Colab
-(`/content/drive/MyDrive/rl-connect-four/`) and falls back to a local
-`./artifacts/` directory otherwise. Flip `USE_GDRIVE = False` in the
-"Mount Google Drive" cell to force the local path.
+`$ARTIFACT_DIR`, a per-run timestamped directory of the form
+`<base>/<algorithm>/<YYYY-MM-DD_HH-MM-SS>/`. On Colab the base is
+`/content/drive/MyDrive/Finding Theta/rl-connect-four/` (Google Drive);
+elsewhere it falls back to a local `./artifacts/` base. Flip
+`USE_GDRIVE = False` in the "Artifact output directory" cell to force
+the local path even on Colab. Because each run lands in its own
+timestamped subdirectory, re-running the notebook never overwrites a
+previous run.
 
 - `checkpoint/` — stable copy of the final Ray checkpoint (main + every
   `main_v*` snapshot the `SelfPlayCallback` added during league play).
