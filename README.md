@@ -30,12 +30,19 @@ Running the notebook end-to-end writes everything below to
 - `win_rate.png` — dedicated win rate vs. training iteration, with the
   self-play threshold line overlaid.
 - `reward.png` — dedicated episode-return-over-time graph.
+- `win_rate_by_phase.png` — win rate over training with the background
+  shaded by `league_size`, so it's obvious which opponent regime main
+  was facing at each iteration and when each snapshot was added.
+- `opening_moves.png` — bar chart of main's first move (as player 0)
+  over 200 deterministic rollouts; column 3 (center) is the
+  theoretical-best opening and is highlighted for reference.
 - `videos/*.gif` — animated replays of the trained agent playing Connect
   Four, rendered via the Farama PettingZoo `connect_four_v3` environment.
   The trained policy still consumes OpenSpiel observations (that's what
   it was trained on); PettingZoo is driven in lockstep purely as the
   renderer. Includes `main_vs_random_p0.gif`, `main_vs_random_p1.gif`,
-  and — if any league snapshots exist — `main_vs_main_v0.gif`.
+  and — if league snapshots exist — `main_vs_main_v0.gif` plus
+  `main_vs_main_v{N-1}.gif` (the latest snapshot).
 - `results.json` — machine-readable summary: training metadata,
   win/loss/draw rates vs. the random baseline (with 95% CIs), win rates
   vs. every league snapshot, and paths to every graph / video / checkpoint.
